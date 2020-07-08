@@ -20,7 +20,7 @@ export default function ButtonAppBar() {
           </Typography>
       </div>
       <div className='w-30'>
-        <img src={globe} alt='web' className='mt3 right-1 left-0' height='45' width='auto'/>
+        <img src={globe} alt='web' className='mt3 right-1 left-0 pointer' height='45' width='auto'/>
         <Button variant="contained" className='bottom-1 left-1'>Contact Us</Button>
         <Button variant="contained" className='bottom-1 left-2'>Login</Button>
       </div>

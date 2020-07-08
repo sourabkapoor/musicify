@@ -1,73 +1,71 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
+import './Music.css';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
+import AddIcon from '@material-ui/icons/Add';
+import GetAppIcon from '@material-ui/icons/GetApp';
+import Slider from '@material-ui/core/Slider';
+import VolumeUp from '@material-ui/icons/VolumeUp';
+import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    width: 'wrap',
-    alignSelf: 'center',
-    justifyContent: 'center',
-  },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
-  content: {
-    flex: '1 0 auto',
-  },
-  cover: {
-    width: 151,
-  },
-  controls: {
-    display: 'flex',
-    alignItems: 'center',
-    paddingLeft: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
-  },
-  playIcon: {
-    height: 38,
-    width: 38,
-  },
-}));
 
-export default function MediaControlCard() {
-  const classes = useStyles();
-  const theme = useTheme();
+class Test extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
 
-  return (
-    <div className='flex justify-around mt6'>
-      <Card className={classes.root}>
-        <div className={classes.details}>
-          <CardContent className={classes.content}>
-            
-            <Typography component="h5" variant="h5">
-              Stay!
-            </Typography>
-            <Typography variant="subtitle1" color="textSecondary">
-              KOKO P
-            </Typography>
-          </CardContent>
-          <div className={classes.controls}>
-            <IconButton aria-label="previous">
-              {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-            </IconButton>
-            <IconButton aria-label="play/pause">
-              <PlayArrowIcon className={classes.playIcon} />
-            </IconButton>
-            <IconButton aria-label="next">
-              {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-            </IconButton>
+    }
+  }
+
+  render() {
+    return(
+      <div className='flex mt6'>
+        <div className='center CardStyle ma3 vh-75 w-30'>
+          <div className='center Thumb ma1 h4 w4 mt4'>
           </div>
-        </div> 
-      </Card>
-    </div>
-  );
+          <h4 className='white'>Track Title Here</h4>
+          <p className='white'>Artist Name</p>
+          <br/>
+          <div><hr width='60%'/></div>
+          <br/>
+          
+          <div className='justify-around'>
+            <span className='flex-start ma4'>
+              <AddIcon fontSize='large'/>
+            </span>
+            <span className='flex-start ma3'>
+              <SkipPreviousIcon fontSize='large'/>
+            </span>
+            <span className='center ma3'>
+              <PlayArrowIcon fontSize='large'/>
+            </span>
+            <span className='flex-end ma3'>
+              <SkipNextIcon fontSize='large'/>
+            </span>
+            <span className='flex-end ma4'>
+              <GetAppIcon fontSize='large'/>
+            </span>
+          </div>
+          <br/>
+          
+          <div className='flex'>
+            <div className='flex-start w-25'>
+              <VolumeMuteIcon />
+            </div>
+            <div className='w-50 center'>
+              <Slider aria-labelledby="input-slider"/>
+            </div>
+            <div className='flex-start w-25'>
+              <VolumeUp />
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+    );
+  }
 }
+
+export default Test;

@@ -1,0 +1,11 @@
+.CardStyle {
+border-radius: 50px;
+background: #1e1e1e;
+box-shadow:  -33px -33px 66px #111111, 
+             33px 33px 66px #2c2c2c;
+}
+
+.Thumb {
+	background: #4c4c4c;
+	border-radius: 60px;
+}

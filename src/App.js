@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './Components/NavBar/NavBar';
 import Music from './Components/Music/Music';
 import Contact from './Components/Contact/Contact';
+//import Test from './test.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,10 @@ class App extends React.Component {
     <div className="App bg-dark-gray">
       <NavBar/>
       <br/>
-      <Music/>
+      <Music/> 
+      {
+        //<Test/>
+      }
       <h1 className='grid pa6 ma4 white'>List of music</h1>
       <Contact />
     </div>
